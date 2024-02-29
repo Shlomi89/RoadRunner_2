@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.ScoreActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/main_IMG_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/score_LBL_NewHighScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="New High Score"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:visibility="invisible"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/score_LBL_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:text="Score\n000"
+        android:textColor="@color/black"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/score_TXT_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/score_LBL_score"
+        android:layout_centerInParent="true"
+        android:ems="10"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:inputType="text"
+        android:visibility="invisible"
+        android:backgroundTint="@color/white"
+        />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/score_BTN_save"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/score_TXT_Name"
+        android:layout_centerInParent="true"
+        android:text="Save"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/score_BTN_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/score_BTN_save"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:text="Return To Menu"/>
+
+
+</RelativeLayout>
