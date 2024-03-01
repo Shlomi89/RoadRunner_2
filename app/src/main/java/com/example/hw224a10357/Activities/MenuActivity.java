@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 
 import com.bumptech.glide.Glide;
 import com.example.hw224a10357.R;
@@ -16,6 +18,8 @@ public class MenuActivity extends AppCompatActivity {
 
     private MaterialButton menu_BTN_Start;
     private MaterialButton menu_BTN_LeaderBoard;
+
+    private LinearLayout menu_LAY_Speed;
     private MaterialButton menu_BTN_Slow;
     private MaterialButton menu_BTN_Fast;
 
@@ -52,6 +56,7 @@ public class MenuActivity extends AppCompatActivity {
         {
             menu_BTN_Button.setEnabled(true);
             menu_BTN_Sensors.setEnabled(false);
+            menu_LAY_Speed.setVisibility(View.INVISIBLE);
             mode = "SENSORS";
         }
         else // Button mode chosen
@@ -59,6 +64,7 @@ public class MenuActivity extends AppCompatActivity {
             menu_BTN_Sensors.setEnabled(true);
             menu_BTN_Button.setEnabled(false);
             mode = "Button";
+            menu_LAY_Speed.setVisibility(View.VISIBLE);
         }
     }
 
@@ -83,6 +89,7 @@ public class MenuActivity extends AppCompatActivity {
         menu_BTN_Button = findViewById(R.id.menu_BTN_Button);
         menu_BTN_Sensors = findViewById(R.id.menu_BTN_Sensors);
         menu_BTN_LeaderBoard = findViewById(R.id.menu_BTN_Leaderboard);
+        menu_LAY_Speed = findViewById(R.id.menu_LAY_Speed);
     }
 
 

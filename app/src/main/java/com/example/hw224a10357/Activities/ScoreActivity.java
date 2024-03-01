@@ -16,6 +16,7 @@ import com.example.hw224a10357.R;
 import com.example.hw224a10357.Utility.DataManager;
 import com.example.hw224a10357.Utility.SharedPreferencesManager;
 import com.example.hw224a10357.Utility.SignalManager;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textfield.TextInputEditText;
@@ -56,7 +57,7 @@ public class ScoreActivity extends AppCompatActivity {
 
     private Location currentLocation;
     private FusedLocationProviderClient fusedLocationProviderClient;
-    private static final int REQUEST_CODE = 101;
+    private static final int REQUEST_CODE = 1;
 
 
     @Override
@@ -102,9 +103,12 @@ public class ScoreActivity extends AppCompatActivity {
             return;
         }
         Task<Location> task = fusedLocationProviderClient.getLastLocation();
-        task.addOnSuccessListener(location -> {
-            if (location != null) {
-                currentLocation = location;
+        task.addOnSuccessListener(new OnSuccessListener<Location>() {
+            @Override
+            public void onSuccess(Location location) {
+                if (location!=null){
+                    currentLocation =location;
+                }
             }
         });
     }
